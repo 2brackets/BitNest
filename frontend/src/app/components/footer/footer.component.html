@@ -1,7 +1,9 @@
-<footer class="footer" [class.expanded]="isExpanded">
+<footer class="footer" [class.expanded]="isExpanded" [style.height.px]="footerHeight">
   <div class="expanded-content" *ngIf="isExpanded">
+    <!-- Drag-handle -->
+    <div class="resizer" (mousedown)="onMouseDown($event)"></div>
     <div class="expanded-content-menu">
-      <button class="expanded-content-menu-btn">
+      <button class="expanded-content-menu-btn" (click)="closeExpand()">
         <span class="material-symbols-outlined">cancel</span>
       </button>
     </div>
