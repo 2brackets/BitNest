@@ -1,0 +1,41 @@
+<div class="log-viewer">
+    <!-- LogViewer -->
+    <div class="log-viewer-output">
+        <ul class="log-list">
+            @for (log of filteredLogs; track log) {
+                <li [class.log-list-item-info]="log.includes('[Info]')"
+                    [class.log-list-item-warning]="log.includes('[Warning]')"
+                    [class.log-list-item-error]="log.includes('[Error]')">
+                    {{ log }}
+                </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Settings -->
+    <div class="log-viewer-settings">
+        <label>Search</label>
+        <input type="text" 
+            placeholder="Search logs..." 
+            class="log-viewer-settings-input" 
+            (input)="onSearchChange($event)"/>
+        <div class="log-viewer-settings-filters">
+            <label>
+                <input type="checkbox" value="info" 
+                [checked]="getFilter('info')"
+                (change)="onFilterChange('info', $event)"> Info
+            </label>
+            <label>
+                <input type="checkbox" value="warning" 
+                [checked]="getFilter('warning')"
+                (change)="onFilterChange('warning', $event)"> Warning
+            </label>
+            <label>
+                <input type="checkbox" value="error"
+                 [checked]="getFilter('error')"
+                 (change)="onFilterChange('error', $event)"> Error
+            </label>
+        </div>
+        <button class="log-viewer-settings-btn">Run</button>
+    </div>
+</div>

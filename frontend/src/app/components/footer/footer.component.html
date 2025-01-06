@@ -1,0 +1,31 @@
+<footer class="footer" [class.expanded]="isExpanded">
+  <div class="expanded-content" *ngIf="isExpanded">
+    <div class="expanded-content-menu">
+      <button class="expanded-content-menu-btn">
+        <span class="material-symbols-outlined">cancel</span>
+      </button>
+    </div>
+    <div class="expanded-content-body">
+        <div *ngIf="activeTab === 'logs'">
+          <app-log-viewer></app-log-viewer>
+        </div>
+        <div *ngIf="activeTab === 'terminal'"> 
+          <p>Terminal</p>
+        </div>
+    </div>
+</div>
+  <nav class="footer-nav">
+    <button class="footer-button" 
+        [class.active]="activeTab === 'logs'" 
+        (click)="toggleExpand('logs')">
+  <span class="material-symbols-outlined">summarize</span>
+  Logs
+</button>
+<button class="footer-button" 
+        [class.active]="activeTab === 'terminal'" 
+        (click)="toggleExpand('terminal')">
+  <span class="material-symbols-outlined">terminal</span>
+  Terminal
+</button>
+  </nav>
+</footer>

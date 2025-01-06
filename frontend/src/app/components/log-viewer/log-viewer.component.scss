@@ -1,0 +1,118 @@
+@use '../../../styles.scss' as *;
+
+.log-viewer {
+    display: flex; 
+    height: 100%;
+    width: 100%;  
+  
+    .log-viewer-output {
+        flex-grow: 1; 
+        width: 100%;
+        overflow-y: auto; 
+        padding: 5px;
+        background-color: $primary-color;
+        color: $text-color;
+        font-size: 16px;
+        font-family: monospace;
+        border-right: 3px solid $background-color; 
+
+        .log-list {
+            width: 100%;
+            padding: 0;
+            list-style: none;
+
+            .log-list-item-info {
+                width: 100%;
+            }
+
+            .log-list-item-warning {
+                color: #bdd192;
+                width: 100%;
+            }
+
+            .log-list-item-error {
+                color: #cb8080;
+                width: 100%;
+            }
+        }
+    }
+  
+    .log-viewer-settings {
+        width: 200px; // Fast bredd
+        height: 100%; // Fyller höjden
+        overflow-y: auto; // Egen scrollbar
+        padding: 10px;
+        background-color: $primary-color;
+        display: flex;
+        flex-direction: column; 
+        gap: 2px; 
+  
+        .log-viewer-settings-input {
+            width: 150px; 
+            height: 25px; 
+            padding: 5px; 
+            font-size: 14px;
+            border: none; 
+            outline: none; 
+            background-color: $background-color; 
+            color: $text-color;
+            border-radius: 4px;
+    
+        &:focus {
+            outline: none; 
+            box-shadow: none; 
+        }
+    
+        &::placeholder {
+            color: $secondary-color; 
+            font-style: italic; 
+        }
+    }
+    
+  
+    .log-viewer-settings-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; 
+    
+        label {
+            display: flex;
+            align-items: center; 
+            font-size: 14px; 
+            color: $text-color; 
+    
+            input[type="checkbox"] {
+                width: 16px; 
+                height: 16px; 
+                margin-right: 5px; 
+                accent-color: $primary-color;
+                cursor: pointer; 
+                background-color: $background-color;
+    
+                &:hover {
+                    filter: brightness(1.2); 
+                }
+    
+                &:focus {
+                    outline: none; 
+                }
+            }
+        }
+    }
+    
+  
+      .log-viewer-settings-btn {
+        padding: 8px;
+        background-color: $primary-color;
+        color: $text-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+  
