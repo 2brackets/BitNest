@@ -44,6 +44,13 @@ app-root {
   padding: 20px;          
 }
 
+.xterm-helpers {
+  position: absolute;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
 
 
 

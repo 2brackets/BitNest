@@ -18,11 +18,11 @@ export class TerminalComponent {
   private inputBuffer: string = '';
   private terminalPrompt: string = '';
 
-  private readonly ANSI_COLORS:  { [key: string]: string } = {
-    reset: `\x1b[39m`, 
-    blue: '\x1b[34m',
-    darkGray: '\x1b[90m',
-    yellow: '\x1b[33m',
+  private readonly ANSI_COLORS: { [key: string]: string } = {
+    reset: `\x1b[39m`,
+    blue: '\x1b[38;2;0;150;255m',
+    darkGray: '\x1b[38;2;120;120;120m',
+    yellow: '\x1b[93m', 
   };
 
   ngAfterViewInit(): void {
@@ -40,13 +40,13 @@ export class TerminalComponent {
         background: backgroundColor,
         foreground: textColor,
       },
-      fontWeight: '500', // Gör texten lite tjockare
-      fontWeightBold: '700', // Fetstil för "bold" text
+      fontWeight: '500',
+      fontWeightBold: '700', 
     });
 
     this.fitAddon = new FitAddon();
     this.terminal.loadAddon(this.fitAddon);
-
+  
     this.terminal.open(this.terminalDiv.nativeElement);
     this.fitAddon.fit();
     
