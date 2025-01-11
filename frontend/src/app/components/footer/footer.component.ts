@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogViewerComponent } from '../log-viewer/log-viewer.component';
+import { TerminalComponent } from '../terminal/terminal.component';
 
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, LogViewerComponent],
+  imports: [CommonModule, LogViewerComponent, TerminalComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
