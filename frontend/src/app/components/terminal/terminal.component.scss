@@ -1,12 +1,5 @@
 @use '../../../styles.scss' as *;
 
-
-:root {
-    --terminal-bg-color: #{$background-color};
-    --terminal-text-color: #{$text-color};
-    --terminal-font-family: #{$font-family};
-}
-
 .terminal {
     display: flex; 
     height: 100%;
