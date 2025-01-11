@@ -71,10 +71,10 @@ export class LoggerService {
         "[2006-03-04] [Error] - crashed",
         "[2006-03-04] [Info] - Started Bitnest",
         "[2010-04-04] [Warning] - Could not get all data",
-        "[2010-05-04] [Error] - crashed",
+        "[2010-05-04] [Error] - crashed denna ska vara först nu ",
     ];
 
     public getLogs(): string[] {
-        return this.logs
+        return this.logs.reverse();
     }
 }

@@ -10,11 +10,11 @@ import { FitAddon } from 'xterm-addon-fit';
 })
 export class TerminalComponent {
   @ViewChild('terminal', { static: true }) terminalDiv!: ElementRef
+  private readonly MAX_HISTORY: number = 100;
   private terminal!: Terminal;
   private fitAddon!: FitAddon;
   private commandHistory: string[] = []; 
-  private historyIndex: number = -1;
-  private readonly MAX_HISTORY: number = 100; 
+  private historyIndex: number = -1; 
   private inputBuffer: string = '';
   private terminalPrompt: string = '';
 
