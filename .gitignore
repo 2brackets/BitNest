@@ -9,6 +9,17 @@ tmp/
 out-tsc/
 .angular/
 
+# Spring Boot and Java build outputs
+target/
+*.jar
+*.war
+*.ear
+
+# Maven and Gradle specific files
+.mvn/
+.gradle/
+build/
+
 # IDE and Editor files
 .vscode/
 .idea/
@@ -23,13 +34,23 @@ out-tsc/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.out
 
 # Environment files
 .env
 .env.*.local
+application.properties
+application.yml
+application-*.properties
+application-*.yml
 
 # OS-specific files
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+~$*
