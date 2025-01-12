@@ -143,6 +143,4 @@ export class TerminalComponent {
       }
     }).join(' ');
   }
-  
-  
 }
