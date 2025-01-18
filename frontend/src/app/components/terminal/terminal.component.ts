@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
+import { ApiService } from '../../Core/services/api.service';
 
 @Component({
   selector: 'app-terminal',
@@ -16,7 +17,7 @@ export class TerminalComponent {
   private commandHistory: string[] = []; 
   private historyIndex: number = -1; 
   private inputBuffer: string = '';
-  private terminalPrompt: string = '';
+  private terminalPrompt: string = ''
 
   private readonly ANSI_COLORS: { [key: string]: string } = {
     reset: `\x1b[39m`,
@@ -24,6 +25,8 @@ export class TerminalComponent {
     darkGray: '\x1b[38;2;120;120;120m',
     yellow: '\x1b[93m', 
   };
+
+  constructor(private apiService: ApiService) {}
 
   ngAfterViewInit(): void {
     const backgroundColor: string = '#121517';
@@ -49,10 +52,9 @@ export class TerminalComponent {
   
     this.terminal.open(this.terminalDiv.nativeElement);
     this.fitAddon.fit();
-    
-    this.terminalPrompt = 'C:\\> '
+
     this.terminal.writeln('BitNest Terminal version 0.0.1');
-    this.terminal.write(this.terminalPrompt);
+    this.getTerminalPrompt()
 
     this.terminal.onData(data => this.handleInput(data))
   }
@@ -65,7 +67,7 @@ export class TerminalComponent {
         this.processCommand(this.inputBuffer)
         this.inputBuffer = '';
         this.historyIndex = -1; 
-        this.terminal.write(this.terminalPrompt); 
+        this.getTerminalPrompt();
         break;
       case '\u007F': 
         if (this.inputBuffer.length > 0) {
@@ -143,4 +145,17 @@ export class TerminalComponent {
       }
     }).join(' ');
   }
+
+  private getTerminalPrompt(): void {
+    this.apiService.get<string>('terminal/terminalPrompt').subscribe(
+      (response) => {
+        if (response.success) {
+          this.terminalPrompt = response.data;
+          this.terminal.write(this.terminalPrompt);
+        } else {
+          console.error('Error:', response.message); 
+        }
+      });
+  }
+  
 }
