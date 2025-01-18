@@ -30,6 +30,12 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.36</version> <!-- Se efter den senaste versionen på https://projectlombok.org -->
+			<scope>provided</scope>
+		</dependency>
 		<!--
         <dependency>
             <groupId>org.springframework.boot</groupId>

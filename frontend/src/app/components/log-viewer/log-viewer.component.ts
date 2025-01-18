@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LogFilterService } from '../../Core/Services/log-filter.service';
-import { LoggerService } from '../../Core/Services/logger.service';
+import { LogFilterService } from '../../Core/services/log-filter.service';
+import { LoggerService } from '../../Core/services/logger.service';
 
 @Component({
   selector: 'app-log-viewer',

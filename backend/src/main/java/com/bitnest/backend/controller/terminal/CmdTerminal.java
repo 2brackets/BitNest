@@ -7,7 +7,7 @@ public class CmdTerminal extends AbstractTerminal {
     @Override
     public String getTerminalPrompt() throws Exception {
         String[] cmdCommand = {"cmd.exe", "/c", "cd"};
-        return String.format("%s>", execute(cmdCommand).trim());
+        return String.format("%s> ", execute(cmdCommand).trim());
     }
 
     @Override
