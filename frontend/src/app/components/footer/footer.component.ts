@@ -11,7 +11,7 @@ import { TerminalComponent } from '../terminal/terminal.component';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  private readonly standardHeight: number = 20;
+  private readonly standardHeight: number = 46.8;
 
   public isExpanded: boolean = false;
   public activeTab: 'logs' | 'terminal' | null = null;
