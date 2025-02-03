@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
-import { ApiService } from '../../Core/services/api.service';
+import { ApiService } from '../../Core/Services/api.service';
 
 @Component({
   selector: 'app-terminal',
