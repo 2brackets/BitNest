@@ -1,0 +1,52 @@
+@use '../../../styles.scss' as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px; // Endast horisontell padding
+    height: 50px; // Fast höjd för headern
+    background-color: $primary-color;
+    color: $text-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .logo {
+        display: flex;  
+        align-items: center; 
+        gap: 8px;
+        font-size: 24px;
+        font-weight: 700;
+        color: $secondary-color;
+
+        .material-symbols-outlined {
+            font-size: 30px;
+        }
+    }
+
+    .nav {
+        display: flex;
+        gap: 20px;
+        height: 100%; // Lägg till höjd här så den fyller headern
+
+        .nav-link {
+            display: flex;  
+            align-items: center;
+            justify-content: center;
+            height: 100%; // Fyll hela höjden av headern
+            box-sizing: border-box; // Säkerställ att padding/border inkluderas
+            padding-inline: 10px; // Sidopadding utan att påverka höjden
+            gap: 8px;
+            font-size: 16px;
+            color: $text-color;
+            text-decoration: none;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+
+            &:hover,
+            &.active {
+                color: $secondary-color;
+                border-bottom: 2px solid $secondary-color;
+            }
+        }
+    }
+}

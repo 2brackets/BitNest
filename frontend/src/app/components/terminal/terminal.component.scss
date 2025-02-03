@@ -1,0 +1,28 @@
+@use '../../../styles.scss' as *;
+
+.terminal {
+    display: flex; 
+    height: 100%;
+    width: 100%; 
+
+    .terminal-console {
+        width: 100%;
+        height: 100%;
+        flex-grow: 1; 
+        overflow-y: auto; 
+        padding: 10px;
+
+        .xterm-helper-textarea {
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+          }
+          
+    }
+
+    .terminal-control {
+        width: 250px;
+        height: 100%;
+        border-left: 3px solid $background-color; 
+    }
+}

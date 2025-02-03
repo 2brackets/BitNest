@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..900&display=swap');
+
+
+$background-color: #262C30;
+$primary-color: #121517;
+$secondary-color: #3feb87;
+$standard-color: #3A434A;
+$hover-color: #4E5A63;
+$text-color: #a7aaac;
+
+$font-family: 'Outfit', sans-serif; 
+$font-size-base: 20px;  
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-size: $font-size-base;  
+    font-family: $font-family;  
+    line-height: 1.6;           
+    margin: 0;
+    padding: 0;
+}
+html, body {
+  margin: 0; // Ta bort marginaler
+  padding: 0; // Ta bort padding
+  overflow-x: hidden; // Förhindra horisontell scroll
+  width: 100vw; // Säkerställ att bredden aldrig överstiger viewporten
+  box-sizing: border-box; // Säkerställ att padding och border räknas med i bredden
+}
+
+
+app-root {
+  display: flex;
+  flex-direction: column; 
+  height: 100vh;
+  width: 100%;      
+}
+
+.content {
+  flex: 1;               
+  overflow-y: auto;      
+  padding: 20px;          
+}
+
+.xterm-helpers {
+  position: absolute;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+
+
+
+  
